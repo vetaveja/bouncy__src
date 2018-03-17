@@ -1,0 +1,373 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100%;
+}
+
+body {
+	color:  $text-color;
+	background-color: $bg-color;
+	font: 14px/1.4 $text-f;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.header {
+	font-size: 0;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	&__home {
+	}
+	&__logo {
+		margin-top: 10px;
+		width: 115px;
+		height: 20px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		float: left;
+		@include transition(all, .5s, ease-in);
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(1.2);
+		}
+	}
+	&__nav{
+		display: inline-block;
+		font-size: 16px;
+		float: right;
+		margin-right: -25px;
+		min-width: 330px;
+		&-items {
+			margin: 0;
+			padding: 0;
+		}
+		&-item {
+			outline: none;
+			display: inline-block;
+			border: $border-width solid transparent;
+			@include border-radius(20px);
+			padding: 10px 25px;
+			line-height: 1;
+			@include transition(all, 1s, ease-in);
+			&:hover,
+			&:active,
+			&:focus {
+				border-color: $bg-text-color;
+				background-color: $accent-color;
+			}
+		}
+		&-link {
+			text-decoration: none;
+			color: $bg-text-color;
+		}
+	}
+}
+
+.section {
+	&__home {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		color: $bg-text-color;
+		height: 100vh;
+	}
+	&__team,
+	&__map {
+		background-color: #fff;
+	}
+	&__testimonials {
+		padding-bottom: 100px;
+	}
+	&__title {
+		font: 300 35px/1 $title-f;
+		letter-spacing: 10px;
+		margin: 0;
+		padding: 295px 0 40px;
+		text-transform: uppercase;
+		&--sm {
+			padding: 90px 300px 40px;
+			font: 300 20px/1 $title-f;
+			color: $title-color;
+			letter-spacing: 5px;
+		}
+	}
+	&__subtitle {
+		font-size: 16px;
+		line-height: 1.75;
+		letter-spacing: 2px;
+		padding: 0 20% 30vh;
+	}
+	&__scroll {
+		font-size: 0;
+		display: inline-block;
+		background-color: $accent-color;
+		padding: 14px 12px;
+		position: absolute;
+		bottom: 10vh;
+		@include border-radius(50px);
+		@include transition(all, .5s, ease-in);
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(1.2);
+		}
+		&-image {
+			width: 12px;
+			height: 7px;
+		}
+	}
+	&__description {
+		margin-bottom: 70px;
+		padding: 0 300px;
+		color: $text-color;
+		line-height: 1.7;
+		letter-spacing: 1px;
+	}
+	&__filters {
+		padding: 0;
+		position: relative;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	&__filter {
+		display: inline-block;
+		text-decoration: none;
+		padding: 15px;
+	}
+	&__link {
+		text-decoration: none;
+		color: #464646;
+		font-size: 16px;
+		margin-bottom: 60px;
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -15px;
+			margin: 0 auto;
+			width: 60%;
+			height: 1px;
+			background-color: transparent;
+		}
+		&:hover:after,
+		&:focus:after,
+		&:active:after,
+		&.active:after {
+			background-color: $accent-color;
+		}
+	}
+	&__images {
+		margin-bottom: 100px;
+		padding: 0 20px;
+	}
+	&__image {
+		font-size: 0;
+		margin-bottom: 20px;
+	}
+	&__button {
+		padding: 60px 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		color: $bg-text-color;
+		&-text {
+			margin-bottom: 30px;
+			font-size: 20px;
+			letter-spacing: 1px;
+		}
+		&-btn {
+			outline: none;
+			display: block;
+			margin: 0 auto;
+			border: $border-width solid $bg-text-color;
+			@include border-radius(30px);
+			font-size: 16px;
+			line-height: 1;
+			background-color: transparent;
+			padding: 10px 30px;
+			@include transition(all, .5s, ease-in);
+			&:hover,
+			&:active,
+			&:focus {
+				border-color: $bg-text-color;
+				background-color: $accent-color;
+			}
+		}
+	}
+}
+
+.slider {
+	max-width: 98%;
+	margin: 0 auto;
+	&--testimonials {
+		padding: 50px 95px 0;
+		background-color: #fff;
+	}
+}
+
+.slide {
+	outline: none;
+	text-align: justify;
+	&__text {
+		font-size: 0;
+    display: inline-block;
+    width: calc(100% - 285px);
+    vertical-align: top;
+    padding: 30px 0 0 315px;
+    text-align: right;
+		float: right;
+		letter-spacing: 1.5px;
+		&--testimonials {
+			text-align: left;
+			padding: 0 0 0 70px;
+			width: calc(100% - 130px);
+		}
+	}
+	&__picture {
+		width: 285px;
+		height: 365px;
+		overflow: hidden;
+		display: inline-block;
+		position: relative;
+		&--testimonials {
+			width: 130px;
+			height: 130px;
+			border-radius: 50%;
+		}
+	}
+	&__img {
+		min-width: 100%;
+		min-height: 100%;
+		overflow: hidden;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+	  transform: translate(-50%, -50%);
+	}
+	&__name {
+		font-size: 20px;
+		color: #464646;
+		display: block;
+		line-height: 1;
+		margin-bottom: 10px;
+		&--testimonials {
+			color: $accent-color;
+			text-transform: uppercase;
+			font-size: 16px;
+			font-weight: 700;
+			margin: 25px 0 0;
+		}
+	}
+	&__job {
+		font-size: 14px;
+		text-transform: uppercase;
+		font: 300 14px/1 $title-f;
+		color: $text-color;
+		display: block;
+		margin-bottom: 30px;
+		font-style: italic;
+		&--testimonials {
+			color: #464646;
+			font: 400 14px $text-f;
+			margin: 5px 0 0;
+			font-style: normal;
+		}
+	}
+	&__description {
+		font-size: 14px;
+		color: #464646;
+		margin: 0;
+		line-height: 1.75;
+		padding-right: 45px;
+		&--testimonials {
+			font-size: 16px;
+		}
+	}
+	&__text-container {
+		border-right: 5px solid $accent-color;
+		padding-right: 45px;
+	}
+}
+
+.slick {
+	&-dots {
+		padding: 0;
+		text-align: center;
+		margin: 60px 0 0;
+		& li {
+			display: inline-block;
+			margin-bottom: 60px;
+			&:not(:last-of-type) {
+				margin-right: 10px;
+			}
+		}
+		& button {
+			display: inline-block;
+			font-size: 0;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			border: 1px solid $accent-color;
+			cursor: pointer;
+			padding: 0;
+			background-color: transparent;
+			outline: none;
+		}
+	}
+}
+
+.slick-dots button:hover,
+.slick-dots button:focus,
+.slick-dots .slick-active button {
+	background-color: $accent-color;
+}
+
+#map {
+	width: 100%;
+  height: 440px;
+}
+
+.footer {
+	background-color: $bg-text-color;
+	&__logo {
+		margin: 60px 0 25px;
+	}
+	&__copyright {
+		color: $text-color;
+		letter-spacing: 1px;
+	}
+	&__socials{
+		padding: 0 0 70px;
+		margin: 40px 0 0;
+	}
+	&__social {
+		display: inline-block;
+		@include transition(all, .5s, ease-in);
+		&-link {
+		}
+		&-image {
+			width: 25px;
+			height: 25px;
+		}
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(1.2);
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@mixin transition($duration, $property, $function) {
+	transition: $property $duration $function;
+}
+@mixin border-radius($val) {
+	border-radius: $val;
+}
+@mixin flex-center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
